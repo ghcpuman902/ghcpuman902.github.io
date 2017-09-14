@@ -123,13 +123,16 @@ EDITED
 
 @media (min-width: 1300px) {
   .container {
-    width: 100%; }
+    max-width: 1300px;
+  }
   html {
-    font-size:100%; 
+    font-size:2.5em;
   }
   body{
-    font-size:2em;
+    font-size:2.5em;
   }
+h1, h2, h3, h4, h5, h6 {
+  font-size: 140%;
 }
 /**/
 /* Base Styles
@@ -1203,7 +1206,6 @@ ul.tab-nav li a.active.button:focus {
   display: block;
     border-bottom: 1px solid #bbb;
 }
-
 
 
 
