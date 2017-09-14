@@ -124,13 +124,14 @@ EDITED
 @media (min-width: 1300px) {
   .container {
     width: 100%; }
-html {
-  font-size:100%; }
+  html {
+    font-size:100%; 
+  }
   body{
-  2em;
+    font-size:2em;
   }
 }
-
+/**/
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
