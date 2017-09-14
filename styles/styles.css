@@ -1195,21 +1195,20 @@ ul.tab-nav li a.active.button:focus {
 
 
 
-@media (min-width: 1300px) {
+@media (min-width: 1500px) {
   .container {
-    max-width: 1300px;
+    max-width: 1500px;
   }
   html {
-    font-size:2.5em;
   }
   body{
-    font-size:2.5em;
+    font-size:2.6em;
   }
 
-    h1 { font-size: 8.0rem; }
-    h2 { font-size: 6.7rem; }
-    h3 { font-size: 5.7rem; }
-    h4 { font-size: 4.8rem; }
-    h5 { font-size: 3.8rem; }
-    h6 { font-size: 2.4rem; }
+    h1 { font-size: 6rem; }
+    h2 { font-size: 5.04rem; }
+    h3 { font-size: 4.32rem; }
+    h4 { font-size: 3.6rem; }
+    h5 { font-size: 2.88rem; }
+    h6 { font-size: 1.8rem; }
 }
