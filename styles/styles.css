@@ -133,7 +133,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: 'Fira Sans', "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #222; 
+  color: #222;
   margin-bottom: 50px;
 }
 
@@ -181,7 +181,7 @@ h6{
 }
 
 p {
-  margin-top: 0; 
+  margin-top: 0;
   }
 li p:first-child{
   display: inline;
@@ -261,7 +261,7 @@ input[type="reset"]:hover,
 input[type="button"]:hover{
   color: #002147;
   border-color: #002147;
-  outline: 0; 
+  outline: 0;
   box-shadow: 0 2px 3px #aaa;}
 .button:active,
 button:active,
@@ -270,7 +270,7 @@ input[type="reset"]:active,
 input[type="button"]:active{
   color: #003E74;
   border-color: #003E74;
-  outline: 0; 
+  outline: 0;
   box-shadow: 0 0px 0px #aaa;}
 .button:focus,
 button:focus,
@@ -298,7 +298,7 @@ input[type="reset"].button-primary:hover,
 input[type="button"].button-primary:hover{
   color: #FFF;
   background-color: #0091D4;
-  border-color: #0091D4; 
+  border-color: #0091D4;
   box-shadow: 0 2px 3px #aaa;}
 .button.button-primary:active,
 button.button-primary:active,
@@ -307,8 +307,8 @@ input[type="reset"].button-primary:active,
 input[type="button"].button-primary:active{
   color: #FFF;
   background-color: #006EAF;
-  border-color: #006EAF; 
-  outline: 0; 
+  border-color: #006EAF;
+  outline: 0;
   box-shadow: 0 0px 0px #aaa;}
 .button.button-primary:focus,
 button.button-primary:focus,
@@ -317,7 +317,7 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
   background-color: #0091D4;
-  border-color: #0091D4; 
+  border-color: #0091D4;
   box-shadow: 0px 0px 5px 1px #449ECF;
   text-shadow: 0px 1px 1px #FFFFFF;
 }
@@ -336,7 +336,7 @@ input[type="reset"]:disabled:hover,input[type="reset"][disabled="disabled"]:hove
 input[type="button"]:disabled:hover,input[type="button"][disabled="disabled"]:hover {
   color: #003E74;
   border-color: #003E74;
-  outline: 0; 
+  outline: 0;
   box-shadow: 0 0px 0px #aaa;
 }
 .button.button-primary:disabled:hover,.button.button-primary[disabled="disabled"]:hover,
@@ -346,8 +346,8 @@ input[type="reset"].button-primary:disabled:hover,input[type="reset"].button-pri
 input[type="button"].button-primary:disabled:hover,input[type="button"].button-primary[disabled="disabled"]:hover {
   color: #FFF;
   background-color: #006EAF;
-  border-color: #006EAF; 
-  outline: 0; 
+  border-color: #006EAF;
+  outline: 0;
   box-shadow: 0 0px 0px #aaa;
 }
 
@@ -368,7 +368,7 @@ select {
   border: 2px solid #006EAF;
   border-radius: 4px;
   box-shadow: none;
-  box-sizing: border-box; 
+  box-sizing: border-box;
   font-size: 14px;
 }
 /* Removes awkward default styles on some inputs for iOS */
@@ -397,7 +397,7 @@ input[type="password"]:focus,
 textarea:focus,
 select:focus {
   border: 2px solid #006EAF;
-  outline: 0; 
+  outline: 0;
   box-shadow: 0px 0px 5px 1px #449ECF;
 }
 input[type="email"]:disabled,input[type="email"][disabled="disabled"],
@@ -422,12 +422,12 @@ fieldset {
   border-width: 0; }
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline; 
+  display: inline;
 /*  -webkit-appearance: none;
   -moz-appearance: none;*/
-  border:0px;
+  border: 0;
   background-color: #fff;
-  margin:0;
+  margin: 0;
   padding: 0;
   opacity: 0;
   width: 100%;
@@ -446,7 +446,7 @@ input[type="radio"] {
   user-select: none;
 }
 
-.checkbox:after,.radio:after{
+.checkbox:after {
   content: attr(data-title);
   width: 100%;
   position: relative;
@@ -517,58 +517,59 @@ input[type="radio"] {
   margin-bottom: -24px;
 }
 
-.radio span {
-  width: 12px;
-  height: 12px;
-  border: 3px solid #006EAF;
-  border-radius: 20px;
+.radio {
+  display: inline-flex;
+  padding-right: 10px;
+  margin-right: 20px;
+  height: 20px;
   cursor: pointer;
+}
+.radio input[type="radio"] {
+  width: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.radio input[type="radio"] + span {
+  max-width: 100%;
+  padding-left: 30px;
+  flex: 1 0 auto;
+  align-self: center;
+}
+.radio input[type="radio"] + span::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   position: absolute;
   left: 0px;
   top: 0px;
-  display: inline;
+  box-sizing: border-box;
+  border: 3px solid #006EAF;
+  border-radius: 50%;
 }
-.radio span:after {
-  content: '';
-  width: 4px;
-  height: 4px;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  border: 2px solid #006EAF;
-  border-radius: 20px;
-  background: #006EAF;
-  opacity: 0;
-}
-.radio span:hover::after {
-  opacity: 0.3;
-}
-.radio input[type=radio]:checked + span:after {
-  opacity: 1;
-}
-.radio>input[type=radio]:disabled + span{
-  opacity: 0.2;
-}
-.radio>input[type=radio]:disabled + span:hover::after{
-  opacity: 0;
-}
-.radio>input[type=radio]:checked:disabled + span:hover::after{
-  opacity: 1;
-}
-.radio input[type=radio]:focus + span{
+.radio input[type="radio"]:focus + span::before {
   box-shadow: 0px 0px 5px 1px #449ECF;
 }
+.radio input[type="radio"] + span::after {
+  content: '';
+  display: none;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+  background: #006EAF;
+}
+.radio input[type="radio"]:checked + span::after {
+  display: block;
+}
+
 .radioTitle{
   display: block;
   margin-bottom: .5rem;
-  font-weight: 600; 
-}
-.radio+.radioLabel{
-  display: inline;
-  position: relative;
-  top: -24px;
-  left: 0px;
-  margin-bottom: -24px;
+  font-weight: 600;
 }
 
 
@@ -680,7 +681,7 @@ table.matrix th,
 table.matrix td {
   padding: 10px 10px;
   text-align: center;
-  border-bottom: none; 
+  border-bottom: none;
   font-weight: 700;
 }
 table.matrix th {
@@ -710,7 +711,7 @@ table.matrixWrapper>tbody>tr>td {
   padding: 0;
   margin: 0;
   text-align: center;
-  border: none; 
+  border: none;
   font-weight: normal;
 }
 table.matrixWrapper>tbody>tr>th:first-child,
@@ -746,7 +747,7 @@ input,
 textarea,
 select,
 fieldset {
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1.5rem;
   background: #fff;}
 pre,
 blockquote,
@@ -766,16 +767,16 @@ form {
 /* Make element full width */
 .u-full-width {
   width: 100%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .u-half-width {
   width: 50%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 .u-quarter-width {
   width: 25%;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 /* Make sure elements don't run outside containers (great for images in columns) */
@@ -849,28 +850,28 @@ there.
 
 
 /*
-                                                                                                                 
-                                                                           `.`                                   
-        `--------                                                          ods                    :hhhh:         
-        :yyhddhys`      `   `         ``          ``              ``       .:.          ```        .-dd:         
-           +dh`    shhshdhshhh+ :hhyohhhhs:   `/shhhhy+.   shhy-+yddh-  `shhhy`      +yhhyhho`      `dd:         
-           +dh`    .hdo`sdy`:dh` :dds-`./ddo .ydo.``.odh.  `:ddy+..//`   `.+dh`      ::-..-hd+      `dd:         
-           +dh`    `yd/ ods -dh. .dd:    hdy`:ddysssssss-   -dd-           /dh`     :ydyo+oddo      `dd:         
-        `--odh:-.  -hdo`ody.-dh: .ddh/-:sdd/ `ydy:.`.:+s`  -/dd/--.     .--odh:--`  hdh-``:hds.  `--:dd+--.      
-        :hhhhhhhy` shhy:+hh+-yhy`.ddosyhs+.   `:shhhhys:  .yhhhhhhs    `ohhhhhhhy:  -shhhyo+yho  :yhhhhhhhs      
-                                .:dd/.`                                                                          
-                               `shhhhho                     
-                                                                                                                                                                                           
-                          `.`                                                             `.                                                 `.`                                           
-        `----.  .---.    `ydo                                             .yhhho         `hd/                                 -+-           `yd/                                           
-        /hddh+ `sddhs     -:.         ```  `                    ```        ..sds          -:`         ```  `       ```        sds            -:`          ``            ``                 
-         `yds   .hd-   `yhhhs      `ohhsyhhh-  +hhy` /hhh.   :yhhyhhy-       ods       .hhhh+      .shysyhhh.   -yhhyhhy:  `/ohdhooo+`    .yhhho      .+yhhhhy+.  +hhyohhdh/               
-          -dd/ `sd+     ..sdy      +dd/...:/`  `+dh` `/dd.   ./:...sdh       ods        ..hdo      sdd:...//`   ./:-..odh   :/hdy///:`     ..yds     -hdy-``-sdd: `+dd+.`+dd.              
-           +dh./dy`       ody      `+yhdddhy:   /dh`  -dd.  `ohhs+oydd       ods          ydo      .+yhdddhs-  `ohds+oydd     sds            sds     +dd:    .dds  /dh.  .dd.              
-            ydhdh.     .--sdh---`  /y+` `-ydh   :dd/.-sdd/` +dd/``-sdd-   .--sdy---    ---hds---   +y/` `-hds  /dd+``.odd-    sdh..-/+-   ---ydy---  -hdh:..:ydd: `+dh:``/dd/`             
-            .shy:     `shhhhhhhy-  +hyhyyyyo.    /yhhy+yhy: `+hhhys+yhy. `shhhhhhhy.  .yhhhhhhhy.  ohyhysyy+`  `+yhhys+shy.   .ohhhhyo.  .yhhhhhhhy.  `/shhhhy+.  /hhhy-:yhhy:             
 
-        2017 © Imperial College London                                                                                                                                                                                       
+                                                                           `.`
+        `--------                                                          ods                    :hhhh:
+        :yyhddhys`      `   `         ``          ``              ``       .:.          ```        .-dd:
+           +dh`    shhshdhshhh+ :hhyohhhhs:   `/shhhhy+.   shhy-+yddh-  `shhhy`      +yhhyhho`      `dd:
+           +dh`    .hdo`sdy`:dh` :dds-`./ddo .ydo.``.odh.  `:ddy+..//`   `.+dh`      ::-..-hd+      `dd:
+           +dh`    `yd/ ods -dh. .dd:    hdy`:ddysssssss-   -dd-           /dh`     :ydyo+oddo      `dd:
+        `--odh:-.  -hdo`ody.-dh: .ddh/-:sdd/ `ydy:.`.:+s`  -/dd/--.     .--odh:--`  hdh-``:hds.  `--:dd+--.
+        :hhhhhhhy` shhy:+hh+-yhy`.ddosyhs+.   `:shhhhys:  .yhhhhhhs    `ohhhhhhhy:  -shhhyo+yho  :yhhhhhhhs
+                                .:dd/.`
+                               `shhhhho
+
+                          `.`                                                             `.                                                 `.`
+        `----.  .---.    `ydo                                             .yhhho         `hd/                                 -+-           `yd/
+        /hddh+ `sddhs     -:.         ```  `                    ```        ..sds          -:`         ```  `       ```        sds            -:`          ``            ``
+         `yds   .hd-   `yhhhs      `ohhsyhhh-  +hhy` /hhh.   :yhhyhhy-       ods       .hhhh+      .shysyhhh.   -yhhyhhy:  `/ohdhooo+`    .yhhho      .+yhhhhy+.  +hhyohhdh/
+          -dd/ `sd+     ..sdy      +dd/...:/`  `+dh` `/dd.   ./:...sdh       ods        ..hdo      sdd:...//`   ./:-..odh   :/hdy///:`     ..yds     -hdy-``-sdd: `+dd+.`+dd.
+           +dh./dy`       ody      `+yhdddhy:   /dh`  -dd.  `ohhs+oydd       ods          ydo      .+yhdddhs-  `ohds+oydd     sds            sds     +dd:    .dds  /dh.  .dd.
+            ydhdh.     .--sdh---`  /y+` `-ydh   :dd/.-sdd/` +dd/``-sdd-   .--sdy---    ---hds---   +y/` `-hds  /dd+``.odd-    sdh..-/+-   ---ydy---  -hdh:..:ydd: `+dh:``/dd/`
+            .shy:     `shhhhhhhy-  +hyhyyyyo.    /yhhy+yhy: `+hhhys+yhy. `shhhhhhhy.  .yhhhhhhhy.  ohyhysyy+`  `+yhhys+shy.   .ohhhhyo.  .yhhhhhhhy.  `/shhhhy+.  /hhhy-:yhhy:
+
+        2017 © Imperial College London
 
 */
 
@@ -999,7 +1000,7 @@ input[type=range]::-ms-track {
   width: 100%;
   height: 4px;
   cursor: pointer;
-  background: transparent; 
+  background: transparent;
   border-color: transparent;
   color: transparent;
   background: #006EAF;
@@ -1076,7 +1077,7 @@ Dropdown Menu Styles
 
 .dropdown:after{
     content:"▾";
-    color: #003E74; 
+    color: #003E74;
     position: relative;
     right:0;
     top: 0;
@@ -1104,8 +1105,8 @@ Dropdown Menu Styles
   box-sizing: border-box;
 }
 .dropdown>li>span {
-    display: inline-block ; 
-    color: #003E74; 
+    display: inline-block ;
+    color: #003E74;
     text-decoration: none;
     font-weight: 700;
     line-height: 20px;
@@ -1125,14 +1126,14 @@ Dropdown Menu Styles
     width: 100%;
     background: #003E74;
     border: #fff solid 1px;
-    color: #fff; 
+    color: #fff;
     margin-bottom: 0;
     padding-left: 10px;
 
 }
 .dropdown>li a {
-    display: inline-block ; 
-    color: #fff; 
+    display: inline-block ;
+    color: #fff;
     text-decoration: none;
     font-weight: 400;
     line-height: 20px;
